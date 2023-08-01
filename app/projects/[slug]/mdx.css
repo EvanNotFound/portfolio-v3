@@ -1,3 +1,7 @@
+img {
+    @apply my-0 rounded-xl border border-zinc-900/10
+}
+
 [data-rehype-pretty-code-fragment] code {
     @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
     counter-reset: line;
