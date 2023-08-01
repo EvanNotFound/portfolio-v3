@@ -1,0 +1,23 @@
+{
+  "published": true,
+  "title": "jcsuf-next",
+  "description": "A forum built with Next.js and Tailwind CSS for front-end, and Java for back-end.",
+  "date": "2023-07-01T00:00:00.000Z",
+  "url": "https://next.jcsuf.top",
+  "repository": "EvanNotFound/jcsuf-next",
+  "body": {
+    "raw": "\nAPI is probably dead right now, but the front-end is still up :(\n\n![Screenshot of the forum](https://evan.beee.top/img/3cd6d05dd6b8d12688155eb86046b87a-5a199.png)\n\n",
+    "code": "var Component=(()=>{var p=Object.create;var s=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var l=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var b=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),h=(t,n)=>{for(var o in n)s(t,o,{get:n[o],enumerable:!0})},a=(t,n,o,i)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of m(n))!x.call(t,r)&&r!==o&&s(t,r,{get:()=>n[r],enumerable:!(i=f(n,r))||i.enumerable});return t};var j=(t,n,o)=>(o=t!=null?p(l(t)):{},a(n||!t||!t.__esModule?s(o,\"default\",{value:t,enumerable:!0}):o,t)),g=t=>a(s({},\"__esModule\",{value:!0}),t);var d=b((F,c)=>{c.exports=_jsx_runtime});var y={};h(y,{default:()=>v,frontmatter:()=>_});var e=j(d()),_={title:\"jcsuf-next\",description:\"A forum built with Next.js and Tailwind CSS for front-end, and Java for back-end.\",date:\"2023-07-01\",url:\"https://next.jcsuf.top\",published:!0,repository:\"EvanNotFound/jcsuf-next\"};function u(t){let n=Object.assign({p:\"p\",img:\"img\"},t.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.p,{children:\"API is probably dead right now, but the front-end is still up :(\"}),`\n`,(0,e.jsx)(n.p,{children:(0,e.jsx)(n.img,{src:\"https://evan.beee.top/img/3cd6d05dd6b8d12688155eb86046b87a-5a199.png\",alt:\"Screenshot of the forum\"})})]})}function w(t={}){let{wrapper:n}=t.components||{};return n?(0,e.jsx)(n,Object.assign({},t,{children:(0,e.jsx)(u,t)})):u(t)}var v=w;return g(y);})();\n;return Component;"
+  },
+  "_id": "projects/jcsuf-next.mdx",
+  "_raw": {
+    "sourceFilePath": "projects/jcsuf-next.mdx",
+    "sourceFileName": "jcsuf-next.mdx",
+    "sourceFileDir": "projects",
+    "contentType": "mdx",
+    "flattenedPath": "projects/jcsuf-next"
+  },
+  "type": "Project",
+  "path": "/projects/jcsuf-next",
+  "slug": "jcsuf-next"
+}

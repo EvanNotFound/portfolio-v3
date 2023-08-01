@@ -1,0 +1,22 @@
+{
+  "published": true,
+  "title": "Photography Portfolio",
+  "description": "A portfolio website for my photography works.",
+  "date": "2022-10-20T00:00:00.000Z",
+  "url": "https://photography.ohevan.com",
+  "body": {
+    "raw": "\n\n\n![Photography Portfolio 1](https://evan.beee.top/img/2487c0bc92edcc49bc1750755a361f92-efb99.png)\n\n![Photography Portfolio 2](https://evan.beee.top/img/de4187d2717ddc56b8d3c41a31f98bcc-c1ed3.png)\n\n![Photography Portfolio 3](https://evan.beee.top/img/268748c3650d209cd18fbe48bd04da17-6de76.png)\n\n![Photography Portfolio 4](https://evan.beee.top/img/61f41cc27a4dcdb6ccb4fb9a1300f7f5-36192.png)\n\n![Photography Portfolio 5](https://evan.beee.top/img/adc986feaa9032a52a5ddd0673969f8b-3fa3b.png)",
+    "code": "var Component=(()=>{var d=Object.create;var a=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var l=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var b=(o,t)=>()=>(t||o((t={exports:{}}).exports,t),t.exports),P=(o,t)=>{for(var n in t)a(o,n,{get:t[n],enumerable:!0})},p=(o,t,n,c)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let r of f(t))!m.call(o,r)&&r!==n&&a(o,r,{get:()=>t[r],enumerable:!(c=g(t,r))||c.enumerable});return o};var u=(o,t,n)=>(n=o!=null?d(l(o)):{},p(t||!o||!o.__esModule?a(n,\"default\",{value:o,enumerable:!0}):n,o)),y=o=>p(a({},\"__esModule\",{value:!0}),o);var s=b((M,i)=>{i.exports=_jsx_runtime});var v={};P(v,{default:()=>_,frontmatter:()=>x});var e=u(s()),x={title:\"Photography Portfolio\",description:\"A portfolio website for my photography works.\",date:\"2022-10-20\",url:\"https://photography.ohevan.com\",published:!0};function h(o){let t=Object.assign({p:\"p\",img:\"img\"},o.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(t.p,{children:(0,e.jsx)(t.img,{src:\"https://evan.beee.top/img/2487c0bc92edcc49bc1750755a361f92-efb99.png\",alt:\"Photography Portfolio 1\"})}),`\n`,(0,e.jsx)(t.p,{children:(0,e.jsx)(t.img,{src:\"https://evan.beee.top/img/de4187d2717ddc56b8d3c41a31f98bcc-c1ed3.png\",alt:\"Photography Portfolio 2\"})}),`\n`,(0,e.jsx)(t.p,{children:(0,e.jsx)(t.img,{src:\"https://evan.beee.top/img/268748c3650d209cd18fbe48bd04da17-6de76.png\",alt:\"Photography Portfolio 3\"})}),`\n`,(0,e.jsx)(t.p,{children:(0,e.jsx)(t.img,{src:\"https://evan.beee.top/img/61f41cc27a4dcdb6ccb4fb9a1300f7f5-36192.png\",alt:\"Photography Portfolio 4\"})}),`\n`,(0,e.jsx)(t.p,{children:(0,e.jsx)(t.img,{src:\"https://evan.beee.top/img/adc986feaa9032a52a5ddd0673969f8b-3fa3b.png\",alt:\"Photography Portfolio 5\"})})]})}function j(o={}){let{wrapper:t}=o.components||{};return t?(0,e.jsx)(t,Object.assign({},o,{children:(0,e.jsx)(h,o)})):h(o)}var _=j;return y(v);})();\n;return Component;"
+  },
+  "_id": "projects/photography.mdx",
+  "_raw": {
+    "sourceFilePath": "projects/photography.mdx",
+    "sourceFileName": "photography.mdx",
+    "sourceFileDir": "projects",
+    "contentType": "mdx",
+    "flattenedPath": "projects/photography"
+  },
+  "type": "Project",
+  "path": "/projects/photography",
+  "slug": "photography"
+}
