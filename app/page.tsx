@@ -4,6 +4,7 @@ import Particles from "./components/particles";
 
 const navigation = [
 	{ name: "Projects", href: "/projects" },
+	// { name: "Photography", href: "https://photography.ohevan.com" },
 	{ name: "Contact", href: "/contact" },
 ];
 
@@ -11,7 +12,7 @@ export default function Home() {
 	return (
 		<div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
 			<nav className="my-8 sm:my-16 animate-fade-in">
-				<ul className="flex items-center justify-center gap-4">
+				<ul className="flex flex-row items-center justify-center gap-5">
 					{navigation.map((item) => (
 						<Link
 							key={item.href}
