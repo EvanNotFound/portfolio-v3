@@ -18,7 +18,7 @@ export default function MouseCursor({}) {
     if (hoveredElement) {
       console.log(hoveredElement.getBoundingClientRect());
       const { width, height } = hoveredElement.getBoundingClientRect();
-      setCursorSize({ width: width, height: height });
+      setCursorSize({ width: width * 1.2, height: height * 1.1 });
     } else {
       setCursorSize({ width: elementSize.width, height: elementSize.height });
     }
@@ -27,8 +27,8 @@ export default function MouseCursor({}) {
   const variants: Variants = {
     normal: {},
     hover: {
-      width: cursorSize.width ? cursorSize.width * 1.2 : 20,
-      height: cursorSize.height ? cursorSize.height * 1.1 : 20,
+      width: cursorSize.width ? cursorSize.width : 20,
+      height: cursorSize.height ? cursorSize.height : 20,
     },
   };
 
