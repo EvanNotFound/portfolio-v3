@@ -2,6 +2,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const wrapperAnimation = {
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 16 },
+  exit: { opacity: 0, y: 24 },
+  transition: {
+    type: "spring",
+    stiffness: 260,
+    damping: 17,
+    duration: 5,
+  },
+};
+
 export default function PageWrapper({
   className,
   children,
@@ -12,15 +24,10 @@ export default function PageWrapper({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{
-        type: "spring",
-        stiffness: 260,
-        damping: 17,
-        duration: 5,
-      }}
+      variants={wrapperAnimation}
+      initial="initial"
+      animate="animate"
+      exit="exit"
     >
       {children}
     </motion.div>

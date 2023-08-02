@@ -6,7 +6,6 @@ import { Card } from "../components/card";
 import { Article } from "./article";
 import { Redis } from "@upstash/redis";
 import { Eye } from "lucide-react";
-import PageWrapper from "@/app/components/page-wrapper";
 
 const redis = Redis.fromEnv();
 
@@ -48,7 +47,7 @@ export default async function ProjectsPage() {
   return (
     <div className="relative pb-16">
       <Navigation />
-      <PageWrapper className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+      <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32 pb-16">
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
             Projects
@@ -60,7 +59,7 @@ export default async function ProjectsPage() {
         <div className="w-full h-px bg-zinc-800" />
 
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
-          <Card>
+          <Card delay={0}>
             <Link href={`/projects/${featured.slug}`}>
               <article className="relative w-full h-full p-4 md:p-8">
                 <div className="flex items-center justify-between gap-2">
@@ -102,8 +101,8 @@ export default async function ProjectsPage() {
           </Card>
 
           <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
-            {[top2, top3].map((project) => (
-              <Card key={project.slug}>
+            {[top2, top3].map((project, index) => (
+              <Card key={project.slug} delay={index === 0 ? 0.2 : 0.35}>
                 <Article project={project} views={views[project.slug] ?? 0} />
               </Card>
             ))}
@@ -115,8 +114,8 @@ export default async function ProjectsPage() {
           <div className="grid grid-cols-1 gap-4">
             {sorted
               .filter((_, i) => i % 3 === 0)
-              .map((project) => (
-                <Card key={project.slug}>
+              .map((project, index) => (
+                <Card key={project.slug} delay={index * 0.1 + 0.1}>
                   <Article project={project} views={views[project.slug] ?? 0} />
                 </Card>
               ))}
@@ -124,8 +123,8 @@ export default async function ProjectsPage() {
           <div className="grid grid-cols-1 gap-4">
             {sorted
               .filter((_, i) => i % 3 === 1)
-              .map((project) => (
-                <Card key={project.slug}>
+              .map((project, index) => (
+                <Card key={project.slug} delay={index * 0.1 + 0.25}>
                   <Article project={project} views={views[project.slug] ?? 0} />
                 </Card>
               ))}
@@ -133,14 +132,14 @@ export default async function ProjectsPage() {
           <div className="grid grid-cols-1 gap-4">
             {sorted
               .filter((_, i) => i % 3 === 2)
-              .map((project) => (
-                <Card key={project.slug}>
+              .map((project, index) => (
+                <Card key={project.slug} delay={index * 0.1 + 0.5}>
                   <Article project={project} views={views[project.slug] ?? 0} />
                 </Card>
               ))}
           </div>
         </div>
-      </PageWrapper>
+      </div>
     </div>
   );
 }
