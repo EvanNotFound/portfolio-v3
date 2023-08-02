@@ -5,7 +5,7 @@ import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
 import { Redis } from "@upstash/redis";
-import { Eye } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
 
 const redis = Redis.fromEnv();
 
@@ -88,13 +88,18 @@ export default async function ProjectsPage() {
                 >
                   {featured.title}
                 </h2>
-                <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                <p className="mt-4 leading-7 duration-150 text-zinc-400 group-hover:text-zinc-300">
                   {featured.description}
                 </p>
                 <div className="absolute bottom-4 md:bottom-8">
-                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-                    Read more <span aria-hidden="true">&rarr;</span>
-                  </p>
+                  <div className="hidden text-zinc-200 hover:text-zinc-50 lg:flex flex-row items-center gap-[2px] justify-center">
+                    <p>Read more</p>
+                    <ArrowRight
+                      className={
+                        "w-[18px] h-[18px] group-hover:translate-x-1 transition-transform"
+                      }
+                    />
+                  </div>
                 </div>
               </article>
             </Link>
