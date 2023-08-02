@@ -3,6 +3,9 @@ import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import MouseCursor from "@/app/components/mouse-cursor";
+import { CursorProvider } from "@/app/components/cursor-context";
+import React from "react";
 
 export const metadata: Metadata = {
   title: {
@@ -69,7 +72,10 @@ export default function RootLayout({
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
         }`}
       >
-        {children}
+        <CursorProvider>
+          <MouseCursor />
+          {children}
+        </CursorProvider>
       </body>
     </html>
   );

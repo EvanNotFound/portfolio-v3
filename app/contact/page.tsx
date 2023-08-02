@@ -3,7 +3,7 @@ import { Github, Instagram, Mail } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
-import PageWrapper from "@/app/components/page-wrapper";
+import React from "react";
 
 const socials = [
   {
