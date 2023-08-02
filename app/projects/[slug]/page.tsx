@@ -41,7 +41,9 @@ export default async function PostPage({ params }: Props) {
       <Header project={project} views={views} />
       <ReportView slug={project.slug} />
 
-      <div className={"w-full flex justify-center items-center pb-24"}>
+      <div
+        className={"w-full flex justify-center items-center pb-24 bg-zinc-50"}
+      >
         <ArticleWrapper className="px-8 pb-12 pt-4 max-w-full md:!max-w-4xl -translate-y-32 prose prose-zinc prose-quoteless bg-zinc-100/60 backdrop-blur-xl sm:rounded-3xl gh-border">
           <Mdx code={project.body.code} />
         </ArticleWrapper>

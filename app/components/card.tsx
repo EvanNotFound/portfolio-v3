@@ -16,7 +16,7 @@ export const Card = ({
   delay: number;
   children: React.ReactNode;
 }) => {
-  const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
+  const mouseX = useSpring(100, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });

@@ -25,7 +25,7 @@ const headerVariants = {
       type: "spring",
       damping: 20,
       stiffness: 200,
-      delay: 1,
+      delay: 0.6,
     },
   },
 };
@@ -43,7 +43,7 @@ const infoVariants = {
         type: "spring",
         damping: 20,
         stiffness: 200,
-        delay: 0.95,
+        delay: 0.55,
         duration: 0.15,
       },
     },
@@ -135,7 +135,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
           </div>
 
           <Link
-            href="/projects"
+            href={"/projects"}
             className={`duration-200 hover:font-medium ${
               isIntersecting
                 ? " text-zinc-400 hover:text-zinc-100"
@@ -146,7 +146,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
           </Link>
         </div>
       </div>
-      <div className="container mx-auto relative isolate overflow-hidden py-24 sm:pt-32 sm:pb-44">
+      <div className="container mx-auto relative isolate py-24 sm:pt-32 sm:pb-44">
         <motion.div
           initial={"hidden"}
           animate={"visible"}
@@ -164,7 +164,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
           </div>
 
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-            <div className="grid grid-cols-1 gap-y-6 gap-x-8 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+            <div className="flex flex-row sm:grid gap-y-6 gap-x-8 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
               {links.map((link) => (
                 <div
                   key={link.label}
