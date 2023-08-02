@@ -48,7 +48,7 @@ export const Navigation: React.FC = () => {
           <div className="flex justify-between gap-8">
             <div className={"group"}>
               <Link
-                href="/projects"
+                href={"/projects"}
                 className="duration-200 text-zinc-400 group-hover:text-zinc-100"
                 aria-label={"Projects"}
               >
@@ -58,7 +58,7 @@ export const Navigation: React.FC = () => {
             </div>
             <div className={"group"}>
               <Link
-                href="/contact"
+                href={"/contact"}
                 className="duration-200 text-zinc-400 group-hover:text-zinc-100"
                 aria-label={"Contact"}
               >
