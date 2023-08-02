@@ -30,7 +30,9 @@ export default function AnimatedTitleWord({
       opacity: 1,
       y: 0,
       transition: {
-        type: "easeInOut",
+        type: "spring",
+        damping: 20,
+        stiffness: 200,
       },
     },
     hidden: {
