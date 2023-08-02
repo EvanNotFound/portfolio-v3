@@ -2,14 +2,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function AnimatedTitleWord({
+export default function AnimatedText({
   children,
   className,
 }: {
   children: string;
   className?: string;
 }) {
-  const words = children.split(" ");
+  const words = [children];
 
   // Variants for Container of words.
   const container = {
@@ -18,7 +18,7 @@ export default function AnimatedTitleWord({
       opacity: 1,
       transition: {
         staggerChildren: 0.06,
-        delayChildren: 0.04 * i,
+        delayChildren: 0.02 * i,
       },
     }),
   };
@@ -28,18 +28,21 @@ export default function AnimatedTitleWord({
   const child = {
     visible: {
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
-        type: "easeInOut",
+        type: "ease",
+
+        duration: 0.2,
+        delay: 0.1,
       },
     },
     hidden: {
       opacity: 0,
-      y: 30,
+      x: 20,
       transition: {
         type: "spring",
-        damping: 20,
-        stiffness: 400,
+        damping: 12,
+        stiffness: 100,
       },
     },
   };

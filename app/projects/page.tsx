@@ -6,9 +6,9 @@ import { Card } from "../components/card";
 import { Article } from "./article";
 import { Redis } from "@upstash/redis";
 import { ArrowRight, Eye } from "lucide-react";
-import AnimatedTextWord from "@/app/components/framer-animation/animated-text-word";
 import AnimatedTitleWord from "@/app/components/framer-animation/animated-title-word";
 import AnimatedDivider from "@/app/components/framer-animation/animated-divider";
+import AnimatedText from "@/app/components/framer-animation/animated-text";
 
 const redis = Redis.fromEnv();
 
@@ -55,9 +55,9 @@ export default async function ProjectsPage() {
           <AnimatedTitleWord className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
             Projects
           </AnimatedTitleWord>
-          <AnimatedTextWord className="mt-4 text-zinc-400">
+          <AnimatedText className="mt-4 text-zinc-400">
             Projects I've worked on, some personal, some just for fun.
-          </AnimatedTextWord>
+          </AnimatedText>
         </div>
         <AnimatedDivider className={"h-px bg-zinc-800"} />
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
