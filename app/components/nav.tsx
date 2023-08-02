@@ -50,6 +50,7 @@ export const Navigation: React.FC = () => {
               <Link
                 href="/projects"
                 className="duration-200 text-zinc-400 group-hover:text-zinc-100"
+                aria-label={"Projects"}
               >
                 Projects
               </Link>
@@ -59,6 +60,7 @@ export const Navigation: React.FC = () => {
               <Link
                 href="/contact"
                 className="duration-200 text-zinc-400 group-hover:text-zinc-100"
+                aria-label={"Contact"}
               >
                 Contact
               </Link>
@@ -69,6 +71,7 @@ export const Navigation: React.FC = () => {
           <Link
             href="/"
             className="duration-200 text-zinc-300 hover:text-zinc-100"
+            aria-label={"Back to home"}
           >
             <ArrowLeft className="w-6 h-6 " />
           </Link>

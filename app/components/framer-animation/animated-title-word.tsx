@@ -54,14 +54,14 @@ export default function AnimatedTitleWord({
       animate="visible"
     >
       {words.map((word, index) => (
-        <motion.span
+        <motion.h1
           variants={child}
           style={{ marginRight: "5px" }}
           key={index}
           className={className}
         >
           {word}
-        </motion.span>
+        </motion.h1>
       ))}
     </motion.div>
   );
