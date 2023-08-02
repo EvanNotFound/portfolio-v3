@@ -12,13 +12,14 @@ export default function ArticleWrapper({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: -80 }}
+      initial={{ opacity: 1, y: 40 }}
       animate={{ opacity: 1, y: -120 }}
       exit={{ opacity: 0, y: -80 }}
       transition={{
         type: "spring",
         stiffness: 260,
-        damping: 17,
+        damping: 20,
+        delay: 1.1,
         duration: 5,
       }}
     >

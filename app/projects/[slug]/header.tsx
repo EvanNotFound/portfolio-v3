@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { ArrowLeft, Eye, Github, Instagram, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
@@ -13,6 +14,46 @@ type Props = {
 
   views: number;
 };
+
+const headerVariants = {
+  hidden: {
+    height: "100vh",
+  },
+  visible: {
+    height: "auto",
+    transition: {
+      type: "spring",
+      damping: 20,
+      stiffness: 200,
+      delay: 1,
+    },
+  },
+};
+
+const infoVariants = {
+  hidden: {
+    opacity: 0,
+    y: "20vh",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      y: {
+        type: "spring",
+        damping: 20,
+        stiffness: 200,
+        delay: 0.95,
+        duration: 0.15,
+      },
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: "20vh",
+  },
+};
+
 export const Header: React.FC<Props> = ({ project, views }) => {
   const ref = useRef<HTMLElement>(null);
   const [isIntersecting, setIntersecting] = useState(true);
@@ -41,9 +82,12 @@ export const Header: React.FC<Props> = ({ project, views }) => {
   }, []);
 
   return (
-    <header
+    <motion.header
       ref={ref}
-      className="relative isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black"
+      variants={headerVariants}
+      initial={"hidden"}
+      animate={"visible"}
+      className="relative isolate bg-gradient-to-tl from-black via-zinc-900 to-black"
     >
       <div
         className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
@@ -103,7 +147,13 @@ export const Header: React.FC<Props> = ({ project, views }) => {
         </div>
       </div>
       <div className="container mx-auto relative isolate overflow-hidden py-24 sm:pt-32 sm:pb-44">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
+        <motion.div
+          initial={"hidden"}
+          animate={"visible"}
+          exit={"exit"}
+          variants={infoVariants}
+          className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center"
+        >
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
               {project.title}
@@ -134,8 +184,8 @@ export const Header: React.FC<Props> = ({ project, views }) => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </header>
+    </motion.header>
   );
 };
