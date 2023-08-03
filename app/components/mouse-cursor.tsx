@@ -60,12 +60,17 @@ export default function MouseCursor({}) {
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      // Calculate `halfCursorSize` each time the mouse moves
       let halfCursorWidth = isHovered ? cursorSize.width / 2 : 8;
       let halfCursorHeight = isHovered ? cursorSize.height / 2 : 8;
 
-      cursorX.set(e.clientX - halfCursorWidth);
-      cursorY.set(e.clientY - halfCursorHeight);
+      if (isHovered && hoveredElement) {
+        const rect = hoveredElement.getBoundingClientRect();
+        cursorX.set(rect.left + rect.width / 2 - halfCursorWidth);
+        cursorY.set(rect.top + rect.height / 2 - halfCursorHeight);
+      } else {
+        cursorX.set(e.clientX - halfCursorWidth);
+        cursorY.set(e.clientY - halfCursorHeight);
+      }
     };
 
     window.addEventListener("mousemove", moveCursor);
