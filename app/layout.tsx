@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "EvanNotFound's Portfolio",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "/og.png",
         width: 1920,
         height: 1080,
       },

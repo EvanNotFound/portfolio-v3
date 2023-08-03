@@ -25,7 +25,6 @@ export default function MouseCursor({}) {
   }, [hoveredElement, elementSize]);
 
   const variants: Variants = {
-    normal: {},
     hover: {
       width: cursorSize.width ? cursorSize.width : 20,
       height: cursorSize.height ? cursorSize.height : 20,
