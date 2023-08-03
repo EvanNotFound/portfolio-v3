@@ -13,6 +13,7 @@ export default function MouseCursor({}) {
     width: 20,
     height: 20,
   });
+  const [isMouseMoved, setIsMouseMoved] = useState(false);
 
   useEffect(() => {
     if (hoveredElement) {
@@ -24,17 +25,11 @@ export default function MouseCursor({}) {
     }
   }, [hoveredElement, elementSize]);
 
-  const variants: Variants = {
-    hover: {
-      width: cursorSize.width ? cursorSize.width : 20,
-      height: cursorSize.height ? cursorSize.height : 20,
-    },
-  };
-
   useEffect(() => {
     function handleMouseMove(e: MouseEvent): void {
       setMousePosition({ x: e.clientX, y: e.clientY });
       setIsTouchDevice(false);
+      setIsMouseMoved(true); // Set the flag to indicate mouse movement
     }
 
     function handleTouchStart() {
@@ -47,8 +42,26 @@ export default function MouseCursor({}) {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchstart", handleTouchStart);
+      setIsMouseMoved(false); // Reset the flag when the component unmounts
     };
   }, []);
+
+  const variants: Variants = {
+    hidden: {
+      opacity: 0,
+    },
+    hover: {
+      opacity: isMouseMoved ? 1 : 0, // Fade in the cursor if mouse is moved
+      width: cursorSize.width ? cursorSize.width : 20,
+      height: cursorSize.height ? cursorSize.height : 20,
+
+      transition: {
+        opacity: {
+          delay: 0.3,
+        },
+      },
+    },
+  };
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -73,9 +86,11 @@ export default function MouseCursor({}) {
     };
 
     window.addEventListener("mousemove", moveCursor);
+    window.addEventListener("click", moveCursor);
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("click", moveCursor);
     };
     // Add `isHovered` in the dependency array
   }, [isHovered, cursorSize]);
@@ -85,7 +100,8 @@ export default function MouseCursor({}) {
       className={`fixed top-0 left-0 w-5 h-5 z-[100] rounded-full bg-gray-300 mix-blend-difference pointer-events-none   ${
         !isTouchDevice ? "block" : "hidden"
       }`}
-      animate={"hover"}
+      initial={"hidden"}
+      animate={isMouseMoved ? "hover" : "hidden"}
       style={{
         translateX: cursorXSpring,
         translateY: cursorYSpring,

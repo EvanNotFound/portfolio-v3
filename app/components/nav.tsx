@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import NavArrow from "@/app/components/nav-arrow";
 
 export const Navigation: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -68,13 +69,7 @@ export const Navigation: React.FC = () => {
             </div>
           </div>
 
-          <Link
-            href="/"
-            className="duration-200 text-zinc-300 hover:text-zinc-100"
-            aria-label={"Back to home"}
-          >
-            <ArrowLeft className="w-6 h-6 " />
-          </Link>
+          <NavArrow />
         </div>
       </div>
     </header>
