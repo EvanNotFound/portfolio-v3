@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "EvanNotFound's Portfolio",
     images: [
       {
-        url: "/og.png",
+        url: "https://evan.studio/og.png",
         width: 1920,
         height: 1080,
       },
