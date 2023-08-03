@@ -8,6 +8,7 @@ import {
   useAnimation,
   Variants,
 } from "framer-motion";
+import { useCursor } from "@/app/components/cursor-context";
 
 export const Card = ({
   delay,
@@ -16,6 +17,7 @@ export const Card = ({
   delay: number;
   children: React.ReactNode;
 }) => {
+  const { setIsHovered, setElementSize } = useCursor();
   const mouseX = useSpring(100, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
   const ref = useRef(null);
@@ -70,6 +72,18 @@ export const Card = ({
           type: "ease",
           duration: 0.7,
         },
+      }}
+      onMouseEnter={() => {
+        setIsHovered(true);
+        setElementSize({ width: 40, height: 40 });
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setElementSize({ width: 20, height: 20 });
+      }}
+      onClick={() => {
+        setIsHovered(false);
+        setElementSize({ width: 20, height: 20 });
       }}
       onMouseMove={onMouseMove}
       className="transition-[box-shadow,border]  duration-500 shadow-none hover:shadow-xl hover:shadow-zinc-500/10 py-4 sm:py-8 relative overflow-hidden  border rounded-2xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-300/40 border-zinc-600 "

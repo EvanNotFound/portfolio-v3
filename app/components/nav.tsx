@@ -1,10 +1,10 @@
 "use client";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import NavArrow from "@/app/components/nav-arrow";
+import CursorLink from "@/app/components/cursor-link";
 
 export const Navigation: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -48,24 +48,48 @@ export const Navigation: React.FC = () => {
         <div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto md:max-w-full lg:max-w-7xl">
           <div className="flex justify-between gap-8">
             <div className={"group"}>
-              <Link
-                href={"/projects"}
-                className="duration-200 text-zinc-400 group-hover:text-zinc-100"
-                aria-label={"Projects"}
-              >
-                Projects
-              </Link>
-              {pathname === "/projects" && <NavUnderline />}
+              {pathname === "/projects" ? (
+                <>
+                  <Link
+                    href={"/projects"}
+                    className="duration-200 text-zinc-400 group-hover:text-zinc-100"
+                    aria-label={"Projects"}
+                  >
+                    Projects
+                  </Link>
+                  <NavUnderline />
+                </>
+              ) : (
+                <CursorLink
+                  href={"/projects"}
+                  className="duration-200 text-zinc-400 group-hover:text-zinc-100"
+                  aria-label={"Projects"}
+                >
+                  Projects
+                </CursorLink>
+              )}
             </div>
             <div className={"group"}>
-              <Link
-                href={"/contact"}
-                className="duration-200 text-zinc-400 group-hover:text-zinc-100"
-                aria-label={"Contact"}
-              >
-                Contact
-              </Link>
-              {pathname === "/contact" && <NavUnderline />}
+              {pathname === "/contact" ? (
+                <>
+                  <Link
+                    href={"/contact"}
+                    className="duration-200 text-zinc-400 group-hover:text-zinc-100"
+                    aria-label={"Contact"}
+                  >
+                    Contact
+                  </Link>
+                  <NavUnderline />
+                </>
+              ) : (
+                <CursorLink
+                  href={"/contact"}
+                  className="duration-200 text-zinc-400 group-hover:text-zinc-100"
+                  aria-label={"Contact"}
+                >
+                  Contact
+                </CursorLink>
+              )}
             </div>
           </div>
 

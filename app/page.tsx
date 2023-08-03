@@ -1,7 +1,7 @@
 import React from "react";
 import Particles from "./components/particles";
 import HomeTitle from "@/app/components/home-title";
-import HomeLink from "@/app/components/home-link";
+import CursorLink from "@/app/components/cursor-link";
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -15,13 +15,13 @@ export default function Home() {
       <nav className="my-8 sm:my-16 animate-fade-in">
         <div className="flex flex-row items-center justify-center gap-5">
           {navigation.map((item) => (
-            <HomeLink
+            <CursorLink
               key={item.href}
               href={item.href}
               className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
             >
               {item.name}
-            </HomeLink>
+            </CursorLink>
           ))}
         </div>
       </nav>

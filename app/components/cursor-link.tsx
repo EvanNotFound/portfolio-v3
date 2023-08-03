@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import { useCursor } from "@/app/components/cursor-context";
 
-export default function HomeLink({
+export default function CursorLink({
   children,
   className,
   key,
