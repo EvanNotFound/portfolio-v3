@@ -40,7 +40,7 @@ export default function Home() {
           Hi, my name is <span className={"font-bold"}>Jiashao Luo</span>. I'm a
           frontend developer and I love web dev and design.
           <div className={"mt-1"}>
-            I'm a 16y/o high school student currently studying in{" "}
+            I'm a student currently studying in{" "}
             <span className={"underline underline-offset-1"}>Montreal</span>.
           </div>
         </h2>
