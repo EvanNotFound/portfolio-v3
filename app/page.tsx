@@ -37,7 +37,7 @@ export default function Home() {
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="hidden sm:block my-16 text-center animate-fade-in">
         <h2 className="px-8 text-sm text-zinc-500 select-none">
-          Hi, my name is <span className={"font-bold"}>Jiashao Luo</span>. I'm a
+          Hi, my name is <span className={"font-bold"}>Evan Luo</span>. I'm a
           frontend developer and I love web dev and design.
           <div className={"mt-1"}>
             I'm a student currently studying in{" "}
