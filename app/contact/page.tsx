@@ -16,7 +16,7 @@ const socials = [
     icon: <LinkedinIcon size={20} />,
     href: "https://www.linkedin.com/in/jiashaoluo/",
     label: "LinkedIn",
-    handle: "Jiashao Luo",
+    handle: "Evan Luo",
   },
   {
     icon: <Mail size={20} />,

@@ -50,10 +50,10 @@ export default function Home() {
         className="block sm:hidden my-8 text-center animate-fade-in"
       >
         <h2 className="px-8 text-sm text-zinc-500 ">
-          Hi, my name is <span className={"font-bold"}>Jiashao Luo</span>. I'm a
+          Hi, my name is <span className={"font-bold"}>Evan Luo</span>. I'm a
           frontend developer.
           <div className={"mt-2"}>
-            A 16y/o high school student in{" "}
+            I'm a student currently studying in{" "}
             <span className={"underline underline-offset-1"}>Montreal</span>.
           </div>
         </h2>
