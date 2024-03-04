@@ -6,6 +6,9 @@ const nextConfig = {
 	experimental: {
 		mdxRs: true,
 	},
+	images: {
+		domains: ["evan.beee.top"],
+	}
 };
 
 export default withContentlayer(nextConfig);
